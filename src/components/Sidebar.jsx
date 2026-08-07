@@ -1,0 +1,283 @@
+import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { CATEGORY_ORDER, tools } from '../data/toolsConfig'
+import { useSubscription } from '../context/SubscriptionContext'
+import { useUpgradeModal } from '../context/UpgradeModalContext'
+import { useAuth } from '../context/AuthContext'
+import ToolIcon from './ToolIcon'
+import GoogleSignInButton from './GoogleSignInButton'
+import ThemeToggle from './ThemeToggle'
+import logo from '../assets/websitegeek-logo.png'
+
+function GridIcon() {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4">
+      <rect x="3" y="3" width="6" height="6" rx="1" />
+      <rect x="11" y="3" width="6" height="6" rx="1" />
+      <rect x="3" y="11" width="6" height="6" rx="1" />
+      <rect x="11" y="11" width="6" height="6" rx="1" />
+    </svg>
+  )
+}
+function BookIcon() {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4">
+      <path d="M4 4.5A1.5 1.5 0 015.5 3H10v14H5.5A1.5 1.5 0 014 15.5v-11z" />
+      <path d="M16 4.5A1.5 1.5 0 0014.5 3H10v14h4.5a1.5 1.5 0 001.5-1.5v-11z" />
+    </svg>
+  )
+}
+function TagIcon() {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-4 w-4">
+      <path d="M11 3l6 6-8 8-6-6V4a1 1 0 011-1h7z" />
+      <circle cx="7.5" cy="7.5" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
+function ChevronIcon({ open }) {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={`h-3.5 w-3.5 shrink-0 transition-transform ${open ? 'rotate-90' : ''}`}
+    >
+      <path d="M7 4l6 6-6 6" />
+    </svg>
+  )
+}
+
+function UserAvatar({ user }) {
+  const [imageFailed, setImageFailed] = useState(false)
+  if (user.picture && !imageFailed) {
+    return (
+      <img
+        src={user.picture}
+        alt=""
+        onError={() => setImageFailed(true)}
+        className="h-8 w-8 shrink-0 rounded-full object-cover"
+      />
+    )
+  }
+  return (
+    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+      {user.name.charAt(0).toUpperCase()}
+    </span>
+  )
+}
+
+function CategorySection({ category, currentSlug }) {
+  const categoryTools = tools.filter((tool) => tool.category === category)
+  const hasActiveTool = categoryTools.some((tool) => tool.slug === currentSlug)
+  const [open, setOpen] = useState(hasActiveTool)
+
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={() => setOpen((prev) => !prev)}
+        className="flex w-full items-center justify-between rounded-md px-3 py-2 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white"
+      >
+        <span>{category}</span>
+        <ChevronIcon open={open} />
+      </button>
+      {open && (
+        <ul className="mt-0.5 space-y-0.5 pb-1">
+          {categoryTools.map((tool) => {
+            const isActive = tool.slug === currentSlug
+            return (
+              <li key={tool.slug}>
+                <Link
+                  to={`/tools/${tool.slug}`}
+                  className={`flex items-center gap-2.5 rounded-md py-1.5 pl-8 pr-3 text-sm ${
+                    isActive
+                      ? 'bg-blue-600/15 font-medium text-blue-400'
+                      : 'text-slate-400 hover:bg-white/5 hover:text-slate-200'
+                  }`}
+                >
+                  <ToolIcon slug={tool.slug} className="h-4 w-4 shrink-0" />
+                  <span className="truncate">{tool.name}</span>
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </div>
+  )
+}
+
+function SidebarContent({ onNavigate }) {
+  const location = useLocation()
+  const currentSlug = location.pathname.startsWith('/tools/')
+    ? location.pathname.replace('/tools/', '')
+    : null
+
+  const { isPro, devOverrideFree } = useSubscription()
+  const { openUpgradeModal } = useUpgradeModal()
+  const { user, isSignedIn, signOut } = useAuth()
+
+  return (
+    <div className="flex h-full flex-col" onClick={onNavigate}>
+      <div className="flex items-center gap-2.5 px-4 py-5">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white p-1">
+          <img src={logo} alt="" className="h-full w-full object-contain" />
+        </span>
+        <div className="min-w-0 flex-1 leading-tight">
+          <p className="text-sm font-bold text-white">WebsiteGeek</p>
+          <p className="text-xs font-medium text-blue-400">SEO Suite</p>
+        </div>
+        <ThemeToggle />
+      </div>
+
+      <nav className="flex-1 overflow-y-auto px-2 pb-4">
+        <Link
+          to="/"
+          className={`mb-0.5 flex items-center gap-2.5 rounded-md px-3 py-2 text-sm font-medium ${
+            location.pathname === '/' ? 'bg-white/10 text-white' : 'text-slate-300 hover:bg-white/5 hover:text-white'
+          }`}
+        >
+          <GridIcon />
+          All Tools
+        </Link>
+        <Link
+          to="/guides"
+          className={`mb-0.5 flex items-center gap-2.5 rounded-md px-3 py-2 text-sm font-medium ${
+            location.pathname.startsWith('/guides')
+              ? 'bg-white/10 text-white'
+              : 'text-slate-300 hover:bg-white/5 hover:text-white'
+          }`}
+        >
+          <BookIcon />
+          Guides
+        </Link>
+        <Link
+          to="/pricing"
+          className={`mb-2 flex items-center gap-2.5 rounded-md px-3 py-2 text-sm font-medium ${
+            location.pathname === '/pricing'
+              ? 'bg-white/10 text-white'
+              : 'text-slate-300 hover:bg-white/5 hover:text-white'
+          }`}
+        >
+          <TagIcon />
+          Pricing
+        </Link>
+
+        <p className="mb-1 mt-3 px-3 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+          Tools
+        </p>
+        <div className="space-y-0.5">
+          {CATEGORY_ORDER.map((category) => (
+            <CategorySection key={category} category={category} currentSlug={currentSlug} />
+          ))}
+        </div>
+      </nav>
+
+      <div className="border-t border-white/10 p-3">
+        {isSignedIn ? (
+          <div className="flex items-center gap-2.5 rounded-md px-2 py-2">
+            <UserAvatar user={user} />
+            <div className="min-w-0 flex-1 leading-tight">
+              <p className="truncate text-sm font-medium text-white">{user.name}</p>
+              <p className="truncate text-xs text-slate-400">{user.email}</p>
+            </div>
+            <div className="flex shrink-0 flex-col items-end gap-0.5 text-xs font-medium">
+              <Link to="/account" className="text-slate-400 hover:text-white">
+                Billing
+              </Link>
+              <button
+                type="button"
+                onClick={signOut}
+                className="text-slate-400 hover:text-white"
+                title="Sign out"
+              >
+                Sign out
+              </button>
+            </div>
+          </div>
+        ) : (
+          <GoogleSignInButton />
+        )}
+
+        <div className="mt-2.5 flex items-center justify-between px-1">
+          {import.meta.env.DEV && isPro && (
+            <button
+              type="button"
+              onClick={devOverrideFree}
+              className="text-[11px] text-slate-500 hover:text-slate-300"
+              title="Dev-only local override — the next real status check will overwrite this"
+            >
+              Reset to Free (dev)
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={openUpgradeModal}
+            disabled={isPro}
+            className={`ml-auto rounded-full px-2.5 py-1 text-xs font-semibold ${
+              isPro ? 'bg-amber-400/15 text-amber-400' : 'bg-white/10 text-slate-300 hover:bg-white/15'
+            }`}
+          >
+            {isPro ? 'Pro' : 'Free'}
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function MenuIcon() {
+  return (
+    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className="h-5 w-5">
+      <path d="M3 5h14M3 10h14M3 15h14" />
+    </svg>
+  )
+}
+
+function Sidebar() {
+  const [mobileOpen, setMobileOpen] = useState(false)
+
+  return (
+    <>
+      {/* Mobile top bar */}
+      <div className="flex items-center gap-3 border-b border-slate-800 bg-slate-900 px-4 py-3 md:hidden">
+        <button
+          type="button"
+          onClick={() => setMobileOpen(true)}
+          className="text-slate-300 hover:text-white"
+          aria-label="Open menu"
+        >
+          <MenuIcon />
+        </button>
+        <span className="flex h-7 w-7 items-center justify-center rounded-md bg-white p-1">
+          <img src={logo} alt="" className="h-full w-full object-contain" />
+        </span>
+        <span className="min-w-0 flex-1 truncate text-sm font-bold text-white">WebsiteGeek SEO Suite</span>
+        <ThemeToggle />
+      </div>
+
+      {/* Desktop sidebar */}
+      <aside className="hidden w-64 shrink-0 bg-slate-900 md:block">
+        <div className="sticky top-0 h-screen">
+          <SidebarContent />
+        </div>
+      </aside>
+
+      {/* Mobile drawer */}
+      {mobileOpen && (
+        <div className="fixed inset-0 z-40 md:hidden">
+          <div className="absolute inset-0 bg-black/50" onClick={() => setMobileOpen(false)} />
+          <aside className="absolute inset-y-0 left-0 w-72 bg-slate-900 shadow-xl">
+            <SidebarContent onNavigate={() => setMobileOpen(false)} />
+          </aside>
+        </div>
+      )}
+    </>
+  )
+}
+
+export default Sidebar
