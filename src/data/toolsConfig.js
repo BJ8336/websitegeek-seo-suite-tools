@@ -147,6 +147,13 @@ export const tools = [
     category: TOOL_CATEGORIES.TECHNICAL,
   },
   {
+    slug: 'dns-lookup-checker',
+    name: 'DNS Lookup & Propagation Checker',
+    description: 'Look up A, AAAA, CNAME, MX, TXT, and NS records for any domain, with multi-resolver comparison.',
+    category: TOOL_CATEGORIES.TECHNICAL,
+    hasProFeatures: true,
+  },
+  {
     slug: 'internal-link-analyzer',
     name: 'Internal Link & Anchor Text Matrix Analyzer',
     description: 'Paste HTML to classify internal vs. external links and flag generic anchor text.',
