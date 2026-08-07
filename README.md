@@ -8,12 +8,9 @@ Built and maintained by [WebsiteGeek](https://websitegeek.net/) — for more fre
 
 ## Screenshots
 
-<!-- Drop screenshots into a `docs/` folder and reference them here, e.g.: -->
-<!-- ![Home page](docs/screenshot-home.png) -->
-<!-- ![Robots.txt Generator with Bot Access Control](docs/screenshot-robots.png) -->
-<!-- ![Dark mode](docs/screenshot-dark.png) -->
+![WebsiteGeek SEO Suite interface](docs/seo_suite_interface.png)
 
-*(Screenshots coming soon — in the meantime, the [live demo](https://websitegeek.net/seo-tools/) is the best way to see it in action.)*
+*(More screenshots welcome — in the meantime, the [live demo](https://websitegeek.net/seo-tools/) is the best way to see it in action.)*
 
 ## Features
 
