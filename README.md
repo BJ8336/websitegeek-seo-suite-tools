@@ -55,8 +55,8 @@ Companion long-form guides under `/guides` covering keyword density, meta descri
 This repository contains the **frontend application only** — a static, client-side SPA with no backend required to run the free tools locally.
 
 ```bash
-git clone https://github.com/<your-username>/websitegeek-seo-suite.git
-cd websitegeek-seo-suite
+git clone https://github.com/BJ8336/websitegeek-seo-suite-tools.git
+cd websitegeek-seo-suite-tools
 npm install
 npm run dev
 ```
