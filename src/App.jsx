@@ -26,6 +26,7 @@ import AiContentDetector from './tools/ai-content-detector/AiContentDetector'
 import SeoContentScore from './tools/seo-content-score/SeoContentScore'
 import OrganicRankingChecker from './tools/organic-ranking-checker/OrganicRankingChecker'
 import CompetitorPageAuditor from './tools/competitor-page-auditor/CompetitorPageAuditor'
+import ResponsiveWebsiteTester from './tools/responsive-website-tester/ResponsiveWebsiteTester'
 import { guides } from './data/guidesConfig'
 import GuidesHub from './pages/guides/GuidesHub'
 import KeywordDensityGuide from './pages/guides/KeywordDensityGuide'
@@ -73,6 +74,7 @@ const TOOL_COMPONENTS = {
   'seo-content-score': SeoContentScore,
   'organic-ranking-checker': OrganicRankingChecker,
   'competitor-page-auditor': CompetitorPageAuditor,
+  'responsive-website-tester': ResponsiveWebsiteTester,
 }
 
 function App() {

@@ -141,6 +141,12 @@ export const tools = [
     category: TOOL_CATEGORIES.TECHNICAL,
   },
   {
+    slug: 'responsive-website-tester',
+    name: 'Responsive Website Tester',
+    description: 'Preview any URL live on mobile, tablet, laptop, and desktop screen sizes.',
+    category: TOOL_CATEGORIES.TECHNICAL,
+  },
+  {
     slug: 'internal-link-analyzer',
     name: 'Internal Link & Anchor Text Matrix Analyzer',
     description: 'Paste HTML to classify internal vs. external links and flag generic anchor text.',

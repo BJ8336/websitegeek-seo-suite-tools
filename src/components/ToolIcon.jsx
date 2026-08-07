@@ -80,6 +80,13 @@ const PATHS = {
       <circle cx="10" cy="14" r="1" />
     </>
   ),
+  'responsive-website-tester': (
+    <>
+      <rect x="2.5" y="4" width="10" height="7" rx="1" />
+      <path d="M5.5 13.5h4" />
+      <rect x="14.5" y="7" width="4" height="7" rx="0.8" />
+    </>
+  ),
   'lsi-term-extractor': (
     <>
       <circle cx="8.5" cy="8.5" r="4.5" />

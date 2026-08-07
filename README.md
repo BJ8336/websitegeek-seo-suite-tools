@@ -13,14 +13,14 @@ Built and maintained by [WebsiteGeek](https://websitegeek.net/) — for more fre
 
 ## Features
 
-### 🧰 18 tools across 6 categories
+### 🧰 19 tools across 6 categories
 
 - **AI & Content Tools** — AI Content Detector (heuristic), SEO Content Score
 - **Content** — Character Counter, Word Counter, Line Counter, Case Converter
 - **Keyword Research** — Keyword Density Checker, LSI Term Extractor
 - **Rankings & Competitors** — Organic Ranking Checker (via your own Google Search Console), Competitor Page Auditor
 - **On-Page SEO** — Meta & Snippet Optimizer, Heading Structure Auditor, Schema Markup Generator, Open Graph/Twitter Card Previewer
-- **Technical SEO** — Robots.txt & Meta Robots Generator (with per-bot access control for search engines, AI crawlers, SEO tools, and social bots), XML Sitemap Generator, Redirect & .htaccess Rule Builder, Core Web Vitals Estimator
+- **Technical SEO** — Robots.txt & Meta Robots Generator (with per-bot access control for search engines, AI crawlers, SEO tools, and social bots), XML Sitemap Generator, Redirect & .htaccess Rule Builder, Core Web Vitals Estimator, Responsive Website Tester (live mobile/tablet/laptop/desktop preview)
 - **Links** — Internal Link & Anchor Text Matrix Analyzer, Broken Link & Anchor Health Checker
 
 ### 🔓 Freemium, honestly gated
@@ -49,8 +49,23 @@ Companion long-form guides under `/guides` covering keyword density, meta descri
 ## Installation
 
 This repository contains the **frontend application only** — a static, client-side SPA with no backend required to run the free tools locally.
-(https://websitegeek.net/seo-tools/)).
 
+```bash
+git clone https://github.com/BJ8336/websitegeek-seo-suite-tools.git
+cd websitegeek-seo-suite-tools
+npm install
+npm run dev
+```
+
+The dev server runs at `http://localhost:5173/seo-tools/` (note the `/seo-tools/` base path — this app is configured to deploy under a subfolder, matching the [live site](https://websitegeek.net/seo-tools/)).
+
+To build for production:
+
+```bash
+npm run build
+```
+
+Output goes to `dist/`, ready to serve from any static host.
 
 ### Pro tier / payments
 
