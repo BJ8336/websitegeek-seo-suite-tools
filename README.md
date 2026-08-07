@@ -10,7 +10,6 @@ Built and maintained by [WebsiteGeek](https://websitegeek.net/) — for more fre
 
 ![WebsiteGeek SEO Suite interface](docs/seo_suite_interface.png)
 
-*(More screenshots welcome — in the meantime, the [live demo](https://websitegeek.net/seo-tools/) is the best way to see it in action.)*
 
 ## Features
 
@@ -50,23 +49,8 @@ Companion long-form guides under `/guides` covering keyword density, meta descri
 ## Installation
 
 This repository contains the **frontend application only** — a static, client-side SPA with no backend required to run the free tools locally.
+(https://websitegeek.net/seo-tools/)).
 
-```bash
-git clone https://github.com/BJ8336/websitegeek-seo-suite-tools.git
-cd websitegeek-seo-suite-tools
-npm install
-npm run dev
-```
-
-The dev server runs at `http://localhost:5173/seo-tools/` (note the `/seo-tools/` base path — this app is configured to deploy under a subfolder, matching the [live site](https://websitegeek.net/seo-tools/)).
-
-To build for production:
-
-```bash
-npm run build
-```
-
-Output goes to `dist/`, ready to serve from any static host.
 
 ### Pro tier / payments
 
