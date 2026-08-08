@@ -50,6 +50,22 @@ Companion long-form guides under `/guides` covering keyword density, meta descri
 
 This repository contains the **frontend application only** — a static, client-side SPA with no backend required to run the free tools locally.
 
+```bash
+git clone https://github.com/BJ8336/websitegeek-seo-suite-tools.git
+cd websitegeek-seo-suite-tools
+npm install
+npm run dev
+```
+
+The dev server runs at `http://localhost:5173/seo-tools/` (note the `/seo-tools/` base path — this app is configured to deploy under a subfolder, matching the [live site](https://websitegeek.net/seo-tools/)).
+
+To build for production:
+
+```bash
+npm run build
+```
+
+Output goes to `dist/`, ready to serve from any static host.
 
 ### Pro tier / payments
 
