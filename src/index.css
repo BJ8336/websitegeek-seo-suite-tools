@@ -225,6 +225,7 @@
 .dark .light-surface textarea,
 .dark .light-surface select {
   background-color: var(--color-slate-900) !important;
+  color: var(--color-slate-50) !important;
 }
 .dark .light-surface input::placeholder,
 .dark .light-surface textarea::placeholder {
