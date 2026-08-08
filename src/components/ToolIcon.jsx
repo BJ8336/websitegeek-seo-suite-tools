@@ -117,6 +117,34 @@ const PATHS = {
       <path d="M6 7.5l1 1 2-2" />
     </>
   ),
+  'serp-simulator': (
+    <>
+      <rect x="3" y="4" width="14" height="12" rx="1.5" />
+      <path d="M5.5 8h9M5.5 11h6M5.5 13.5h4" />
+    </>
+  ),
+  'hreflang-checker': (
+    <>
+      <circle cx="10" cy="10" r="7" />
+      <path d="M3 10h14M10 3c2 2 3 4.5 3 7s-1 5-3 7c-2-2-3-4.5-3-7s1-5 3-7z" />
+      <path d="M6.5 5.5l7 9M13.5 5.5l-7 9" strokeWidth="1.1" />
+    </>
+  ),
+  'redirect-checker': (
+    <>
+      <circle cx="4.5" cy="10" r="1.8" />
+      <circle cx="15.5" cy="5.5" r="1.8" />
+      <circle cx="15.5" cy="14.5" r="1.8" />
+      <path d="M6.2 9.2L13.8 6.3M6.2 10.8L13.8 13.7" />
+    </>
+  ),
+  'is-it-down-checker': (
+    <>
+      <path d="M10 3v8" />
+      <circle cx="10" cy="15" r="1.2" />
+      <path d="M5 6.5a8 8 0 0110 0" strokeDasharray="2 2" />
+    </>
+  ),
 }
 
 function ToolIcon({ slug, className = 'h-5 w-5' }) {

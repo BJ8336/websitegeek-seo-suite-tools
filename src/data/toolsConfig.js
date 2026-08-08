@@ -95,6 +95,12 @@ export const tools = [
     category: TOOL_CATEGORIES.ON_PAGE,
   },
   {
+    slug: 'serp-simulator',
+    name: 'SERP Simulator',
+    description: "See how your page looks in Google's search results, with a desktop/mobile toggle and breadcrumb-style URL.",
+    category: TOOL_CATEGORIES.ON_PAGE,
+  },
+  {
     slug: 'heading-structure-auditor',
     name: 'Heading Structure Auditor',
     description: 'Paste HTML to check H1-H6 structure for missing or skipped heading levels.',
@@ -159,6 +165,24 @@ export const tools = [
     description: 'WCAG contrast checker plus a structural accessibility audit — alt text, headings, form labels, and more.',
     category: TOOL_CATEGORIES.TECHNICAL,
     hasProFeatures: true,
+  },
+  {
+    slug: 'hreflang-checker',
+    name: 'Hreflang Checker',
+    description: 'Detect and validate alternate-language hreflang tags on a page — recommended for multilingual sites.',
+    category: TOOL_CATEGORIES.TECHNICAL,
+  },
+  {
+    slug: 'redirect-checker',
+    name: 'Redirect Checker',
+    description: 'Follow a redirect chain hop by hop (301/302/307/308), with a choice of User-Agent.',
+    category: TOOL_CATEGORIES.TECHNICAL,
+  },
+  {
+    slug: 'is-it-down-checker',
+    name: 'Is It Down or Just Me',
+    description: 'Check whether a website is reachable, with status code and response time.',
+    category: TOOL_CATEGORIES.TECHNICAL,
   },
   {
     slug: 'internal-link-analyzer',

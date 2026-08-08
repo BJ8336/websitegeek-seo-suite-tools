@@ -29,6 +29,10 @@ import CompetitorPageAuditor from './tools/competitor-page-auditor/CompetitorPag
 import ResponsiveWebsiteTester from './tools/responsive-website-tester/ResponsiveWebsiteTester'
 import DnsLookupChecker from './tools/dns-lookup-checker/DnsLookupChecker'
 import AccessibilityContrastChecker from './tools/accessibility-contrast-checker/AccessibilityContrastChecker'
+import SerpSimulator from './tools/serp-simulator/SerpSimulator'
+import HreflangChecker from './tools/hreflang-checker/HreflangChecker'
+import RedirectChecker from './tools/redirect-checker/RedirectChecker'
+import IsItDownChecker from './tools/is-it-down-checker/IsItDownChecker'
 import { guides } from './data/guidesConfig'
 import GuidesHub from './pages/guides/GuidesHub'
 import KeywordDensityGuide from './pages/guides/KeywordDensityGuide'
@@ -79,6 +83,10 @@ const TOOL_COMPONENTS = {
   'responsive-website-tester': ResponsiveWebsiteTester,
   'dns-lookup-checker': DnsLookupChecker,
   'accessibility-contrast-checker': AccessibilityContrastChecker,
+  'serp-simulator': SerpSimulator,
+  'hreflang-checker': HreflangChecker,
+  'redirect-checker': RedirectChecker,
+  'is-it-down-checker': IsItDownChecker,
 }
 
 function App() {
