@@ -28,6 +28,7 @@ import OrganicRankingChecker from './tools/organic-ranking-checker/OrganicRankin
 import CompetitorPageAuditor from './tools/competitor-page-auditor/CompetitorPageAuditor'
 import ResponsiveWebsiteTester from './tools/responsive-website-tester/ResponsiveWebsiteTester'
 import DnsLookupChecker from './tools/dns-lookup-checker/DnsLookupChecker'
+import AccessibilityContrastChecker from './tools/accessibility-contrast-checker/AccessibilityContrastChecker'
 import { guides } from './data/guidesConfig'
 import GuidesHub from './pages/guides/GuidesHub'
 import KeywordDensityGuide from './pages/guides/KeywordDensityGuide'
@@ -77,6 +78,7 @@ const TOOL_COMPONENTS = {
   'competitor-page-auditor': CompetitorPageAuditor,
   'responsive-website-tester': ResponsiveWebsiteTester,
   'dns-lookup-checker': DnsLookupChecker,
+  'accessibility-contrast-checker': AccessibilityContrastChecker,
 }
 
 function App() {

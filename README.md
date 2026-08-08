@@ -13,14 +13,14 @@ Built and maintained by [WebsiteGeek](https://websitegeek.net/) — for more fre
 
 ## Features
 
-### 🧰 20 tools across 6 categories
+### 🧰 21 tools across 6 categories
 
 - **AI & Content Tools** — AI Content Detector (heuristic), SEO Content Score
 - **Content** — Character Counter, Word Counter, Line Counter, Case Converter
 - **Keyword Research** — Keyword Density Checker, LSI Term Extractor
 - **Rankings & Competitors** — Organic Ranking Checker (via your own Google Search Console), Competitor Page Auditor
 - **On-Page SEO** — Meta & Snippet Optimizer, Heading Structure Auditor, Schema Markup Generator, Open Graph/Twitter Card Previewer
-- **Technical SEO** — Robots.txt & Meta Robots Generator (with per-bot access control for search engines, AI crawlers, SEO tools, and social bots), XML Sitemap Generator, Redirect & .htaccess Rule Builder, Core Web Vitals Estimator, Responsive Website Tester (live mobile/tablet/laptop/desktop preview), DNS Lookup & Propagation Checker (multi-resolver comparison via free DNS-over-HTTPS)
+- **Technical SEO** — Robots.txt & Meta Robots Generator (with per-bot access control for search engines, AI crawlers, SEO tools, and social bots), XML Sitemap Generator, Redirect & .htaccess Rule Builder, Core Web Vitals Estimator, Responsive Website Tester (live mobile/tablet/laptop/desktop preview), DNS Lookup & Propagation Checker (multi-resolver comparison via free DNS-over-HTTPS), Accessibility & Contrast Checker (WCAG contrast math + structural audit — alt text, headings, form labels, and more)
 - **Links** — Internal Link & Anchor Text Matrix Analyzer, Broken Link & Anchor Health Checker
 
 ### 🔓 Freemium, honestly gated

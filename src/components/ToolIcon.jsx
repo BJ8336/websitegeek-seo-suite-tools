@@ -93,6 +93,12 @@ const PATHS = {
       <path d="M3 10h14M10 3c2 2 3 4.5 3 7s-1 5-3 7c-2-2-3-4.5-3-7s1-5 3-7z" />
     </>
   ),
+  'accessibility-contrast-checker': (
+    <>
+      <circle cx="10" cy="4.5" r="1.6" />
+      <path d="M3 7.5c3-1 11-1 14 0M10 6v5M6.5 17l2-6M13.5 17l-2-6" />
+    </>
+  ),
   'lsi-term-extractor': (
     <>
       <circle cx="8.5" cy="8.5" r="4.5" />

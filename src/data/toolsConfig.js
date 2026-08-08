@@ -154,6 +154,13 @@ export const tools = [
     hasProFeatures: true,
   },
   {
+    slug: 'accessibility-contrast-checker',
+    name: 'Accessibility & Contrast Checker',
+    description: 'WCAG contrast checker plus a structural accessibility audit — alt text, headings, form labels, and more.',
+    category: TOOL_CATEGORIES.TECHNICAL,
+    hasProFeatures: true,
+  },
+  {
     slug: 'internal-link-analyzer',
     name: 'Internal Link & Anchor Text Matrix Analyzer',
     description: 'Paste HTML to classify internal vs. external links and flag generic anchor text.',
