@@ -1,6 +1,6 @@
 # WebsiteGeek SEO Suite
 
-A collection of 25 SEO tools — keyword research, on-page audits, technical SEO, AI content analysis, and real Google Search Console ranking data — built as a single-page React app. No signup required for the free tools. Most run entirely in your browser and never send pasted content anywhere; a handful of technical tools (redirect chain following, uptime checks, live-page audits) make a server-side request to fetch or check a URL you provide, guarded against internal/private-network targets.
+A collection of 25+ SEO tools — keyword research, on-page audits, technical SEO, AI content analysis, and real Google Search Console ranking data — built as a single-page React app. No signup required for the free tools. Most run entirely in your browser and never send pasted content anywhere; a handful of technical tools (redirect chain following, uptime checks, live-page audits) make a server-side request to fetch or check a URL you provide, guarded against internal/private-network targets.
 
 **🔗 Live demo: [websitegeek.net/seo-tools](https://websitegeek.net/seo-tools/)**
 
@@ -13,7 +13,7 @@ Built and maintained by [WebsiteGeek](https://websitegeek.net/) — for more fre
 
 ## Features
 
-### 🧰 25 tools across 6 categories
+### 🧰 25+ tools across 6 categories
 
 - **AI & Content Tools** — AI Content Detector (heuristic), SEO Content Score
 - **Content** — Character Counter, Word Counter, Line Counter, Case Converter
@@ -50,22 +50,6 @@ Companion long-form guides under `/guides` covering keyword density, meta descri
 
 This repository contains the **frontend application only** — a static, client-side SPA with no backend required to run the free tools locally.
 
-```bash
-git clone https://github.com/BJ8336/websitegeek-seo-suite-tools.git
-cd websitegeek-seo-suite-tools
-npm install
-npm run dev
-```
-
-The dev server runs at `http://localhost:5173/seo-tools/` (note the `/seo-tools/` base path — this app is configured to deploy under a subfolder, matching the [live site](https://websitegeek.net/seo-tools/)).
-
-To build for production:
-
-```bash
-npm run build
-```
-
-Output goes to `dist/`, ready to serve from any static host.
 
 ### Pro tier / payments
 
