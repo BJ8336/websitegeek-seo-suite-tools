@@ -1,5 +1,6 @@
 const LINKS = [
   { label: 'Home', href: 'https://websitegeek.net/' },
+  { label: 'About This Suite', href: 'https://websitegeek.net/seo-suite/' },
   { label: 'Privacy Policy', href: 'https://websitegeek.net/privacy-policy/' },
   { label: 'Terms of Service', href: 'https://websitegeek.net/terms-conditions/' },
   { label: 'Report Bug / Contact Us', href: 'https://websitegeek.net/contact-us/' },

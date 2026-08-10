@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://websitegeek.net/seo-tools/sitemap.xml

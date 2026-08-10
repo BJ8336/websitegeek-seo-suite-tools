@@ -64,7 +64,7 @@ function XmlSitemapGuide() {
       <h2>What Belongs in a Sitemap (and What Doesn't)</h2>
       <p>
         Only list canonical, indexable URLs — pages you actually want to show up in search results. Our{' '}
-        <Link to="/tools/xml-sitemap-generator">XML Sitemap Generator</Link> validates each URL you
+        <Link to="/xml-sitemap-generator">XML Sitemap Generator</Link> validates each URL you
         submit before including it, rejecting anything missing a protocol or containing spaces, since
         malformed entries can cause an entire sitemap to be ignored rather than just the bad line.
         Leave out redirected URLs, pages blocked by{' '}

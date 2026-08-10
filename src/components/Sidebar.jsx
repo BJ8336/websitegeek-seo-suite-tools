@@ -92,7 +92,7 @@ function CategorySection({ category, currentSlug }) {
             return (
               <li key={tool.slug}>
                 <Link
-                  to={`/tools/${tool.slug}`}
+                  to={`/${tool.slug}`}
                   className={`flex items-center gap-2.5 rounded-md py-1.5 pl-8 pr-3 text-sm ${
                     isActive
                       ? 'bg-blue-600/15 font-medium text-blue-400'
@@ -113,9 +113,8 @@ function CategorySection({ category, currentSlug }) {
 
 function SidebarContent({ onNavigate }) {
   const location = useLocation()
-  const currentSlug = location.pathname.startsWith('/tools/')
-    ? location.pathname.replace('/tools/', '')
-    : null
+  const firstSegment = location.pathname.slice(1).split('/')[0]
+  const currentSlug = tools.some((tool) => tool.slug === firstSegment) ? firstSegment : null
 
   const { isPro, devOverrideFree } = useSubscription()
   const { openUpgradeModal } = useUpgradeModal()

@@ -42,7 +42,7 @@ function RobotsTxtGuide() {
         Robots.txt controls crawling: whether a bot is allowed to request a given URL path at all. Each
         rule is a simple Allow or Disallow directive under a User-agent block, plus an optional Sitemap
         line pointing crawlers to your XML sitemap. Our{' '}
-        <Link to="/tools/robots-txt-generator">Robots.txt &amp; Meta Robots Generator</Link> builds this
+        <Link to="/robots-txt-generator">Robots.txt &amp; Meta Robots Generator</Link> builds this
         exact structure from simple toggles, so you don't have to remember the syntax.
       </p>
 

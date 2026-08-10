@@ -75,7 +75,7 @@ function CoreWebVitalsGuide() {
         Real Core Web Vitals require an actual browser render — either lab data from a tool like
         Lighthouse or field data from real visitors via the Chrome User Experience Report. Neither is
         possible from a pasted block of HTML with no server and no rendering engine, which is why our{' '}
-        <Link to="/tools/core-web-vitals-estimator">Core Web Vitals &amp; Resource Size Estimator</Link>{' '}
+        <Link to="/core-web-vitals-estimator">Core Web Vitals &amp; Resource Size Estimator</Link>{' '}
         is explicit about what it actually does: it estimates contributing factors from your markup —
         DOM element count, text-to-code ratio, and how many images are missing alt text — rather than
         pretending to produce a real LCP or INP score it has no way to measure.

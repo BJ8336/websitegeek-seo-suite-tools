@@ -1,16 +1,23 @@
 # WebsiteGeek SEO Suite — static hosting config (Apache / cPanel)
 #
-# This app uses HashRouter (React Router in hash mode), so no server-side
-# rewrite rule is needed for client-side routes like /#/tools/xyz — the
-# server only ever needs to serve index.html for the app's own folder, and
-# the browser handles everything after the # locally. This file only
-# handles compression, caching, and forcing HTTPS.
+# This app uses BrowserRouter (real paths like /seo-tools/keyword-density-checker),
+# so a direct hit or refresh on a tool/guide URL is a real HTTP request the
+# server has to handle — there's no file at that path, so it must fall back
+# to index.html and let React Router render the matching route client-side.
 
-# Force HTTPS
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteBase /seo-tools/
+
+  # Force HTTPS
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # SPA fallback: only for requests that aren't a real file or directory
+  # (JS/CSS/images/ffmpeg-core/etc. are still served directly, untouched).
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
 </IfModule>
 
 # Gzip compression

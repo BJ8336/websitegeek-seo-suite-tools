@@ -1,4 +1,5 @@
-import { HashRouter, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
 import Layout from './components/Layout'
 import ToolPlaceholder from './components/ToolPlaceholder'
 import Home from './pages/Home'
@@ -89,9 +90,29 @@ const TOOL_COMPONENTS = {
   'is-it-down-checker': IsItDownChecker,
 }
 
+// Redirects legacy hash-routed URLs (e.g. /seo-tools/#/tools/keyword-density-checker,
+// from before the switch to BrowserRouter) to their real-path equivalent, so
+// anything already indexed, bookmarked, or shared externally keeps working.
+function LegacyHashRedirect() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const hash = window.location.hash
+    if (!hash || hash === '#' || hash === '#/') return
+
+    let path = hash.slice(1)
+    if (path.startsWith('/tools/')) path = path.replace('/tools/', '/')
+
+    navigate(path, { replace: true })
+  }, [navigate])
+
+  return null
+}
+
 function App() {
   return (
-    <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <BrowserRouter basename="/seo-tools" future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <LegacyHashRedirect />
       <Routes>
         <Route element={<Layout />}>
           <Route index element={<Home />} />
@@ -108,7 +129,7 @@ function App() {
             return (
               <Route
                 key={tool.slug}
-                path={`/tools/${tool.slug}`}
+                path={`/${tool.slug}`}
                 element={ToolComponent ? <ToolComponent /> : <ToolPlaceholder tool={tool} />}
               />
             )
@@ -116,7 +137,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 

@@ -51,7 +51,7 @@ function GuidesHub() {
       <h3>If You're Optimizing a Single Page</h3>
       <p>
         Start with the{' '}
-        <Link to="/tools/meta-snippet-optimizer">Meta &amp; Snippet Optimizer</Link> to check your title
+        <Link to="/meta-snippet-optimizer">Meta &amp; Snippet Optimizer</Link> to check your title
         and description length against Google's approximate pixel cutoffs, then run your content through
         the <Link to="/guides/keyword-density-checker">keyword density guide</Link> to make sure you're
         not accidentally stuffing your target phrase.

@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom'
+import { useDocumentHead } from '../hooks/useDocumentHead'
 
 function ToolHeader({ tool }) {
+  useDocumentHead({
+    title: `${tool.name} — Free Tool | WebsiteGeek SEO Suite`,
+    description: tool.description,
+  })
+
   return (
     <div className="mb-6">
       <nav className="mb-3 flex items-center gap-1.5 text-xs text-slate-500">

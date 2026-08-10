@@ -42,7 +42,7 @@ function KeywordDensityGuide() {
         Density is simple arithmetic: how many times a word or phrase appears, divided by your total
         word count. If "email marketing" appears 6 times in a 400-word article, that's a 1.5% density
         for that phrase. Our{' '}
-        <Link to="/tools/keyword-density-checker">free keyword density checker</Link> calculates this
+        <Link to="/keyword-density-checker">free keyword density checker</Link> calculates this
         for both single words and two-word phrases automatically, stripping out common stop words like
         "the" and "and" so the results actually mean something.
       </p>

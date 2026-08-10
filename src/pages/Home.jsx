@@ -16,7 +16,7 @@ function ToolCard({ tool }) {
       <h3 className="mt-3 font-semibold text-slate-900">{tool.name}</h3>
       <p className="mt-1 flex-1 text-sm text-slate-600">{tool.description}</p>
       <Link
-        to={`/tools/${tool.slug}`}
+        to={`/${tool.slug}`}
         className="mt-4 inline-flex w-fit items-center rounded-lg bg-blue-600 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white hover:bg-blue-700"
       >
         Go to Tool

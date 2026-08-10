@@ -50,7 +50,7 @@ function MetaDescriptionGuide() {
         count — it cuts it off at roughly 920 pixels of rendered width on desktop. Because letters have
         different widths, two descriptions with the same character count can truncate at different
         points. Our{' '}
-        <Link to="/tools/meta-snippet-optimizer">Meta &amp; Snippet Optimizer</Link> measures this the
+        <Link to="/meta-snippet-optimizer">Meta &amp; Snippet Optimizer</Link> measures this the
         same way — using a canvas-rendered pixel width estimate rather than a flat character cap — so
         you can see exactly where your description would get cut off before you publish.
       </p>

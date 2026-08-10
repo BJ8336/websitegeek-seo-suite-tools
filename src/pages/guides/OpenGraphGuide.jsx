@@ -67,7 +67,7 @@ function OpenGraphGuide() {
       </ul>
       <p>
         You can preview exactly how these will render before publishing using our{' '}
-        <Link to="/tools/open-graph-previewer">Open Graph / Twitter Card Previewer</Link>, which builds
+        <Link to="/open-graph-previewer">Open Graph / Twitter Card Previewer</Link>, which builds
         Facebook, X, and LinkedIn-style cards from the same inputs and shows a clear fallback state if
         your image URL fails to load, instead of a broken image icon.
       </p>

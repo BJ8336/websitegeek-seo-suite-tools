@@ -59,7 +59,7 @@ function SchemaMarkupGuide() {
       <h2>Which Schema Types Matter Most</h2>
       <p>
         Most sites only need a handful of types. Our{' '}
-        <Link to="/tools/schema-markup-generator">Schema Markup Generator</Link> covers the four most
+        <Link to="/schema-markup-generator">Schema Markup Generator</Link> covers the four most
         common ones with a validated, form-based builder:
       </p>
 

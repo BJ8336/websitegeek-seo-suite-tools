@@ -42,7 +42,7 @@ function InternalLinkingGuide() {
         page" to "click here" as a link to a pricing page: one reinforces what that page is about every
         single time it's linked, the other contributes zero topical signal no matter how many times it
         appears. Our{' '}
-        <Link to="/tools/internal-link-analyzer">Internal Link &amp; Anchor Text Matrix Analyzer</Link>{' '}
+        <Link to="/internal-link-analyzer">Internal Link &amp; Anchor Text Matrix Analyzer</Link>{' '}
         scans pasted HTML specifically for this pattern, flagging generic phrases like "click here,"
         "read more," and "this link" so you can find and fix them in bulk.
       </p>
