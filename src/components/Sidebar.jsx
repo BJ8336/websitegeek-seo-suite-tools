@@ -7,7 +7,8 @@ import { useAuth } from '../context/AuthContext'
 import ToolIcon from './ToolIcon'
 import GoogleSignInButton from './GoogleSignInButton'
 import ThemeToggle from './ThemeToggle'
-import logo from '../assets/websitegeek-logo.png'
+
+const LOGO_URL = 'https://websitegeek.net/wp-content/uploads/2026/08/seo-suite.png'
 
 function GridIcon() {
   return (
@@ -124,7 +125,7 @@ function SidebarContent({ onNavigate }) {
     <div className="flex h-full flex-col" onClick={onNavigate}>
       <div className="flex items-center gap-2.5 px-4 py-5">
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white p-1">
-          <img src={logo} alt="" className="h-full w-full object-contain" />
+          <img src={LOGO_URL} alt="" className="h-full w-full object-contain" />
         </span>
         <div className="min-w-0 flex-1 leading-tight">
           <p className="text-sm font-bold text-white">WebsiteGeek</p>
@@ -253,7 +254,7 @@ function Sidebar() {
           <MenuIcon />
         </button>
         <span className="flex h-7 w-7 items-center justify-center rounded-md bg-white p-1">
-          <img src={logo} alt="" className="h-full w-full object-contain" />
+          <img src={LOGO_URL} alt="" className="h-full w-full object-contain" />
         </span>
         <span className="min-w-0 flex-1 truncate text-sm font-bold text-white">WebsiteGeek SEO Suite</span>
         <ThemeToggle />
