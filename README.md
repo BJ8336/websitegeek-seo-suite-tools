@@ -46,33 +46,6 @@ Companion long-form guides under `/guides` covering keyword density, meta descri
 - [React Router](https://reactrouter.com/) (`HashRouter`, for static-hosting compatibility)
 - Deployed as a static build to shared cPanel hosting
 
-## Installation
-
-This repository contains the **frontend application only** — a static, client-side SPA with no backend required to run the free tools locally.
-
-```bash
-git clone https://github.com/BJ8336/websitegeek-seo-suite-tools.git
-cd websitegeek-seo-suite-tools
-npm install
-npm run dev
-```
-
-The dev server runs at `http://localhost:5173/seo-tools/` (note the `/seo-tools/` base path — this app is configured to deploy under a subfolder, matching the [live site](https://websitegeek.net/seo-tools/)).
-
-To build for production:
-
-```bash
-npm run build
-```
-
-Output goes to `dist/`, ready to serve from any static host.
-
-### Pro tier / payments
-
-The live site's Pro tier (one-time purchase, unlocked via Google Sign-In + Stripe) depends on a separate backend service that isn't part of this repository. Running this repo locally gives you the full free-tier experience; Pro-gated sections will show the upgrade prompt since no payment backend is connected. Sign-in itself will work if you configure your own Google OAuth Client ID (see `src/context/AuthContext.jsx`) and update the authorized origins in your Google Cloud Console project.
-
-Two free tools — Redirect Checker and Is It Down or Just Me — also call that same backend (to follow redirects and check reachability server-side, which the browser can't do directly for an arbitrary third-party URL). They're not Pro-gated, but without the backend configured they'll show a network error instead of a result when run locally.
-
 ## Project structure
 
 ```
